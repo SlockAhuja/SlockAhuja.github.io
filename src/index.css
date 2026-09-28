@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Roboto", sans-serif;
+  
+  --color-navy-900: #0a1128;
+  --color-navy-800: #1c2541;
+  --color-navy-700: #3a506b;
+  
+  --color-cyan-500: #00f0ff;
+  --color-cyan-400: #4df8ff;
+  
+  --color-gold-500: #d4af37;
+  --color-gold-400: #e5c158;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-navy-900 text-slate-200 antialiased selection:bg-cyan-500/30;
+  }
+}
