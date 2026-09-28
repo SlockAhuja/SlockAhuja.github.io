@@ -1,60 +1,35 @@
-import { motion } from 'framer-motion';
-import { profileData } from '../data/profile';
-import { GithubIcon, LinkedinIcon } from '../components/Icons';
+
+import { Mail } from 'lucide-react';
+import { GithubIcon as CustomGit, LinkedinIcon as CustomLinked } from '../components/Icons';
 
 export const Contact = () => {
   return (
-    <section id="contact" className="py-32 bg-navy-900 relative overflow-hidden">
-      {/* Abstract Background element */}
-      <div className="absolute right-0 bottom-0 w-1/2 h-full opacity-10 pointer-events-none overflow-hidden">
-        <div className="absolute right-[-10%] bottom-[-20%] w-96 h-96 border-[40px] border-cyan-500 rounded-full rounded-tl-none"></div>
+    <section id="contact" className="py-32 bg-[#050B14] relative overflow-hidden">
+      <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
+        <div className="w-[800px] h-[800px] border border-white rounded-full" />
+        <div className="absolute w-[600px] h-[600px] border border-white rounded-full" />
+        <div className="absolute w-[400px] h-[400px] border border-white rounded-full" />
       </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Let's build, research, and connect<span className="text-cyan-400">.</span>
-            </h2>
-            
-            <p className="text-xl text-slate-400 mb-12 leading-relaxed">
-              Available for research collaborations, technical projects, IEEE initiatives, and internships.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16">
-              <a 
-                href={profileData.linkedin} 
-                target="_blank" 
-                rel="noreferrer"
-                className="group flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)]"
-              >
-                <LinkedinIcon className="mr-3 h-5 w-5" />
-                Connect on LinkedIn
-              </a>
-              
-              <a 
-                href={profileData.github} 
-                target="_blank" 
-                rel="noreferrer"
-                className="group flex items-center justify-center w-full sm:w-auto px-8 py-4 bg-navy-800 hover:bg-navy-700 text-white border border-navy-600 hover:border-cyan-500/50 font-bold rounded-lg transition-all"
-              >
-                <GithubIcon className="mr-3 h-5 w-5" />
-                View GitHub
-              </a>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-slate-400">
-              <div className="p-4 bg-navy-800 rounded-lg border border-navy-700">Research Collaboration</div>
-              <div className="p-4 bg-navy-800 rounded-lg border border-navy-700">Technical Projects</div>
-              <div className="p-4 bg-navy-800 rounded-lg border border-navy-700">IEEE Initiatives</div>
-              <div className="p-4 bg-navy-800 rounded-lg border border-navy-700">Internships</div>
-            </div>
-          </motion.div>
+      
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">Let's Build Something Meaningful.</h2>
+        <p className="text-xl text-slate-400 mb-12">
+          Open to research collaborations, technical projects, IEEE initiatives, and internship opportunities.
+        </p>
+        
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <a href="mailto:ahujaslock321@gmail.com" className="w-full sm:w-auto px-8 py-4 bg-white text-navy-900 font-bold rounded hover:bg-slate-200 transition-colors flex items-center justify-center">
+            <Mail className="w-5 h-5 mr-2" />
+            ahujaslock321@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/slock-ahuja-32839b315" target="_blank" rel="noreferrer" className="w-full sm:w-auto px-8 py-4 border border-white/20 text-white font-bold rounded hover:bg-white/10 transition-colors flex items-center justify-center">
+            <CustomLinked className="w-5 h-5 mr-2" />
+            LinkedIn
+          </a>
+          <a href="https://github.com/SlockAhuja" target="_blank" rel="noreferrer" className="w-full sm:w-auto px-8 py-4 border border-white/20 text-white font-bold rounded hover:bg-white/10 transition-colors flex items-center justify-center">
+            <CustomGit className="w-5 h-5 mr-2" />
+            GitHub
+          </a>
         </div>
       </div>
     </section>
