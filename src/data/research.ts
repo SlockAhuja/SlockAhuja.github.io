@@ -1,79 +1,112 @@
-export const researchData = [
+export interface ResearchArea {
+  id: string;
+  title: string;
+  category: string;
+  icon: string;
+  badge?: string;
+  description: string;
+  topics: string[];
+}
+
+export interface QuantumResultsData {
+  architecture: string;
+  qubits: number;
+  layers: number;
+  parameters: number;
+  dataset: string;
+  pcaComponents: number;
+  varianceRetained: string;
+  testAccuracy: string;
+  correctClassifications: string;
+  totalSamples: number;
+  correctCount: number;
+  features: string[];
+}
+
+export const researchAreas: ResearchArea[] = [
   {
-    id: "01",
-    category: "AI + 6G / NTN",
-    title: "AI-Enabled Resource Management for Non-Terrestrial Network Integrated 6G Communication Systems",
-    status: "Accepted and presented",
-    problem: "Efficient resource allocation in complex Non-Terrestrial Networks integrated with 6G systems is challenging due to dynamic topologies and high mobility.",
-    approach: "Developing AI-driven models to optimize resource management, ensuring low latency and high reliability across the network.",
-    technology: ["AI", "6G", "NTN", "Resource Management", "Wireless Communication"],
-    demoLink: "https://slockahuja.github.io/AI_Based_resource_management/",
-    featured: true
+    id: "ai-ml",
+    title: "Artificial Intelligence",
+    category: "AI & ML",
+    icon: "Brain",
+    description: "Machine learning, deep learning, intelligent decision systems and computer vision.",
+    topics: ["Machine Learning", "Deep Neural Networks", "Computer Vision", "Decision Support Systems"]
   },
   {
-    id: "02",
-    category: "Physics-Informed Neural Networks",
-    title: "PINN Applications in Complex Systems",
-    status: "Ongoing",
-    problem: "Standard neural networks often fail to respect underlying physical laws when modeling physical systems.",
-    approach: "Integrating physical equations directly into the loss function of neural networks to ensure predictions are physically consistent.",
-    technology: ["PyTorch", "PINNs", "Machine Learning"],
-    demoLink: "",
-    featured: false
+    id: "quantum-ai",
+    title: "Quantum AI",
+    category: "Quantum",
+    icon: "Atom",
+    description: "Variational quantum circuits and quantum machine learning.",
+    topics: ["Variational Quantum Circuits (VQC)", "Quantum ML", "Quantum-Classical Hybrid Methods"]
   },
   {
-    id: "03",
-    category: "Computer Vision",
-    title: "Advanced Computer Vision Systems",
-    status: "Active",
-    problem: "Real-time object detection and tracking in constrained environments.",
-    approach: "Utilizing state-of-the-art YOLO architectures and optimization techniques like TensorRT for edge deployment.",
-    technology: ["OpenCV", "TensorRT", "C++", "Python"],
-    demoLink: "",
-    featured: false
+    id: "communications",
+    title: "Communications",
+    category: "Wireless Systems",
+    icon: "Radio",
+    description: "6G, NTN and intelligent wireless communication systems.",
+    topics: ["6G Wireless Systems", "Non-Terrestrial Networks (NTN)", "Resource Management"]
   },
   {
-    id: "04",
-    category: "Embedded AI",
-    title: "AI on the Edge",
-    status: "Active",
-    problem: "Deploying complex AI models on resource-constrained embedded devices.",
-    approach: "Model quantization, pruning, and hardware-specific optimizations for microcontrollers and FPGAs.",
-    technology: ["ESP32", "TinyML", "C++"],
-    demoLink: "",
-    featured: false
+    id: "scientific-computing",
+    title: "Scientific Computing",
+    category: "Numerical Methods",
+    icon: "Binary",
+    description: "Numerical methods, PDEs and computational mathematics.",
+    topics: ["Differential Quadrature Methods (DQM)", "Exponential B-Splines", "SSP-RK54 Integration"]
   },
   {
-    id: "05",
-    category: "Quantum AI",
-    title: "Quantum Machine Learning Exploration",
-    status: "Exploratory",
-    problem: "Investigating the potential speedups of quantum algorithms for machine learning tasks.",
-    approach: "Studying quantum neural networks and hybrid quantum-classical algorithms.",
-    technology: ["Quantum Computing", "QML"],
-    demoLink: "",
-    featured: false
+    id: "physics-informed-ai",
+    title: "Physics-Informed AI",
+    category: "Scientific ML",
+    icon: "Sigma",
+    description: "Physics-informed neural networks and scientific machine learning.",
+    topics: ["Physics-Informed Neural Networks (PINNs)", "SIREN Networks", "Differential Equation Solvers"]
   },
   {
-    id: "06",
-    category: "IoT & Intelligent Systems",
-    title: "Smart Autonomous Systems",
-    status: "Active",
-    problem: "Building scalable and intelligent IoT ecosystems for agriculture and smart cities.",
-    approach: "Integrating sensor networks with edge AI for real-time decision making.",
-    technology: ["IoT", "Sensor Networks", "Microcontrollers"],
-    demoLink: "",
-    featured: false
+    id: "semiconductor-vlsi",
+    title: "Semiconductor & VLSI",
+    category: "Hardware / Silicon",
+    icon: "Cpu",
+    description: "CMOS design, VLSI systems and open-source EDA.",
+    topics: ["CMOS Logic Design", "Microwind", "Open-Source EDA Workflows", "Sequential Logic Cells"]
   },
   {
-    id: "07",
-    category: "VLSI / Hardware",
-    title: "Hardware Acceleration and VLSI Design",
-    status: "Active",
-    problem: "Designing efficient hardware architectures for AI and communication algorithms.",
-    approach: "FPGA-based prototyping and custom VLSI design for high-performance computing.",
-    technology: ["FPGA", "Verilog", "EDA", "PCB Design"],
-    demoLink: "",
-    featured: false
+    id: "iot-smart-systems",
+    title: "IoT & Smart Systems",
+    category: "Connected Systems",
+    icon: "Wifi",
+    description: "Intelligent sensing, agriculture and connected systems.",
+    topics: ["IoT Telemetry", "Agritech Sensors", "Edge Decision Logic"]
+  },
+  {
+    id: "hardware-electronics",
+    title: "Hardware",
+    category: "Embedded & Physical",
+    icon: "Layers",
+    description: "Embedded systems, sensors and hardware-software integration.",
+    topics: ["ESP32 / NodeMCU", "Sensor Signal Conditioning", "Mechanical & Load Systems"]
   }
 ];
+
+export const quantumResultsData: QuantumResultsData = {
+  architecture: "VQC-8q-L3 (Variational Quantum Circuit)",
+  qubits: 8,
+  layers: 3,
+  parameters: 49,
+  dataset: "Edge-IIoTset Flow Features",
+  pcaComponents: 8,
+  varianceRetained: "92.11%",
+  testAccuracy: "98.67%",
+  correctClassifications: "1,480 / 1,500",
+  totalSamples: 1500,
+  correctCount: 1480,
+  features: [
+    "24 Edge-IIoTset statistical flow features",
+    "PCA reduction to 8 orthogonal components (92.11% variance)",
+    "Angle-embedding layer into 8-qubit register",
+    "3 strongly entangling variational layers (49 trainable parameters)",
+    "Pauli-Z expectation measurements"
+  ]
+};

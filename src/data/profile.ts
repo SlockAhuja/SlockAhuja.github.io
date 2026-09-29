@@ -1,29 +1,116 @@
-export const profileData = {
+export interface ProfileData {
+  name: string;
+  shortName: string;
+  monogram: string;
+  tagline: string;
+  headline: string;
+  subtitle: string;
+  supportingText: string;
+  institution: string;
+  location: string;
+  degree: string;
+  expectedGraduation: string;
+  currentSemester: string;
+  currentCGPA?: string;
+  philosophy: string;
+  interests: string[];
+  socials: {
+    github?: string;
+    email?: string;
+    linkedin?: string;
+    googleScholar?: string;
+    orcid?: string;
+    researchGate?: string;
+  };
+  environment: {
+    gpu: string;
+    os: string;
+    subsystem: string;
+    tools: string[];
+  };
+  principles: {
+    title: string;
+    tagline: string;
+    description: string;
+    icon: string;
+  }[];
+}
+
+export const profileData: ProfileData = {
   name: "Slock Ahuja",
-  role: "ICT Engineering Student",
-  tagline: "Building intelligent systems at the intersection of AI, communications, and hardware.",
-  university: "Marwadi University, Rajkot, Gujarat, India",
-  degree: "B.Tech — Information and Communication Technology (ICT)",
+  shortName: "Slock",
+  monogram: "SA",
+  tagline: "ICT Engineering • Research • Technology",
+  headline: "ICT Engineering Student • Researcher • Developer",
+  subtitle: "Information and Communication Technology Engineering Student",
+  supportingText: "Exploring intelligent systems across artificial intelligence, communications, hardware, scientific computing, IoT, and emerging technologies.",
+  institution: "Marwadi University, Rajkot, Gujarat, India",
+  location: "Rajkot, Gujarat, India",
+  degree: "B.Tech in Information and Communication Technology (ICT)",
   expectedGraduation: "2028",
-  github: "https://github.com/SlockAhuja",
-  linkedin: "https://www.linkedin.com/in/slock-ahuja-32839b315",
-  about: `Slock Ahuja is a B.Tech ICT engineering student at Marwadi University working across AI, communication systems, embedded systems, and hardware engineering. His work explores the intersection of AI, 6G/NTN, Embedded Systems, Computer Vision, IoT, VLSI, and Hardware.`,
-  badges: [
-    "IEEE ComSoc Student Ambassador — Region 10",
-    "Chair — IEEE ComSoc Marwadi University Chapter",
-    "Research & Engineering"
-  ],
-  researchInterests: [
-    "AI for Wireless Communications",
-    "6G",
-    "Non-Terrestrial Networks",
-    "Intelligent Resource Management",
-    "Embedded AI",
-    "Computer Vision",
-    "IoT",
-    "VLSI",
-    "Quantum Machine Learning",
+  currentSemester: "5th Semester",
+  philosophy: "Building conceptual understanding from mathematical principles and physical constraints before engineering hardware and software implementations.",
+  interests: [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Deep Learning",
+    "Quantum AI",
+    "IoT & Smart Systems",
+    "Embedded Systems",
+    "Semiconductor / VLSI",
+    "Hardware Design",
+    "Wireless Communications",
+    "6G / NTN",
+    "Scientific Computing",
+    "Numerical Methods",
     "Physics-Informed AI",
-    "Hardware Acceleration"
+    "Computer Vision",
+    "Automation",
+    "Open-Source EDA"
+  ],
+  socials: {
+    github: "https://github.com/SlockAhuja",
+    email: "mailto:ahujaslock321@gmail.com"
+  },
+  environment: {
+    gpu: "NVIDIA RTX A400 GPU",
+    os: "Ubuntu Linux & Windows",
+    subsystem: "WSL2 (Windows Subsystem for Linux)",
+    tools: [
+      "NVIDIA CUDA",
+      "PyTorch",
+      "Docker",
+      "FFmpeg",
+      "OpenCV",
+      "Git & GitHub",
+      "Microwind & Open-source EDA",
+      "MATLAB"
+    ]
+  },
+  principles: [
+    {
+      title: "Understand",
+      tagline: "First-Principles",
+      description: "Build conceptual understanding before implementation. Derive underlying equations and understand physical hardware constraints.",
+      icon: "BookOpen"
+    },
+    {
+      title: "Build",
+      tagline: "Implementation",
+      description: "Convert concepts into working technical systems across silicon layouts, firmware, and software architectures.",
+      icon: "Cpu"
+    },
+    {
+      title: "Validate",
+      tagline: "Empirical Rigor",
+      description: "Measure, test and reproduce results with systematic benchmarking, error metrics, and audited validation.",
+      icon: "Activity"
+    },
+    {
+      title: "Document",
+      tagline: "Clarity & Sharing",
+      description: "Record methodology, results, codebases, and limitations clearly for academic and technical peer review.",
+      icon: "FileText"
+    }
   ]
 };
